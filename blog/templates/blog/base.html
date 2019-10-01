@@ -1,25 +1,67 @@
-<!DOCTYPE html>
 {% load static %}
 <html>
-<head>
-	<title>Aiaulym's blog</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-	
-</head>
-<body>
-	<div class="page-header">
-        <h1><a href="/">Aiaulym's blog</a></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
+    <head>
+        <title>Computer science</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog2.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+        <style>
+        div.fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            border: 3px solid #73AD21;
+        }
+        p {
+            color: #000000;
+            font-size: 150%;
+
+        }
+
+        h1 {
+        color: #d98cb3;
+        font-size: 36pt;
+        text-decoration: none;
+        }
+        body { 
+            background: lightblue url("https://i.pinimg.com/originals/a8/11/a2/a811a271be7d26f6b72e3ce520c158e2.png") no-repeat fixed center; 
+        }
+
+        p {
+            border: 1px solid DodgerBlue;
+            padding: 10px;
+        }
+            /* This stylesheet sets the width of all images to 100%: */
+        img {
+                width: 100%;
+        }
+        </style>
+    </head>
+    <body>
+        
+
+        <div class="page-header">
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Computer science</a></h1>
+        </div>
+        <div class="content container">
+            <img src="https://www.animatedimages.org/data/media/56/animated-computer-image-0019.gif" alt="Computer Man" style="width:100px;height:100px;">
+            <div class="row"> 
+                <div class="fixed">Turn on the light if you understood the material</div> 
+                <button onclick="document.getElementById('myImage').src='https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/001/413/original/pic_bulbon.gif'">Turn on the light</button>
+
+            <img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
+
+            <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
