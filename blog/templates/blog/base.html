@@ -6,9 +6,21 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link rel="stylesheet" href="{% static 'css/blog2.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <script type="text/javascript">
+           let lis = document.querySelectorAll("p");
+
+            let lis_array = Array.from(lis);
+
+            lis.forEach(function(elem){
+                elem.addEventListener("click", function(e){
+                    if (elem.dataset.show === "true") {
+                        elem.innerHTML = elem.dataset.text;
+        }
+    })
+})
+        </script>
         <style>
         div.fixed {
             position: fixed;
@@ -20,6 +32,7 @@
         p {
             color: #000000;
             font-size: 150%;
+            text-align: center;
 
         }
 
@@ -28,7 +41,7 @@
         font-size: 36pt;
         text-decoration: none;
         text-align: center;
-        font-family: 'Fascinate Inline', cursive;
+        font-family: 'Abril Fatface', cursive;
         }
         body { 
             background: lightgreen url("https://i.pinimg.com/originals/a8/11/a2/a811a271be7d26f6b72e3ce520c158e2.png") no-repeat fixed center; 
@@ -37,6 +50,8 @@
         p {
             border: 1px solid DodgerBlue;
             padding: 10px;
+            font-size: 150%;
+            text-shadow: 3px 2px lightblue;
         }
             /* This stylesheet sets the width of all images to 100%: */
         img {
